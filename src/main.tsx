@@ -13,27 +13,27 @@ import NotFound from "./views/NotFound";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/ts-react-portfolio",
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: "/ts-react-portfolio",
         element: <Home />,
       },
       {
-        path: "/about",
+        path: "/ts-react-portfolio/about",
         element: <About />,
       },
       {
-        path: "/projects",
+        path: "/ts-react-portfolio/projects",
         element: <Projects />,
       },
       {
-        path: "/skills",
+        path: "/ts-react-portfolio/skills",
         element: <Skills />,
       },
       {
-        path: "/contacts",
+        path: "/ts-react-portfolio/contacts",
         element: <Contacts />,
       },
     ],
@@ -49,5 +49,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <RouterProvider router={router} />
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
