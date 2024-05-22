@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { ThemeProvider } from "./components/theme-provider";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import Layout from "./components/layouts/Layout";
 import Home from "./views/Home";
 import About from "./views/About";
@@ -11,29 +11,29 @@ import Projects from "./views/Projects";
 import Skills from "./views/Skills";
 import NotFound from "./views/NotFound";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: "/ts-react-portfolio",
+    path: "/",
     element: <Layout />,
     children: [
       {
-        path: "/ts-react-portfolio",
+        path: "/",
         element: <Home />,
       },
       {
-        path: "/ts-react-portfolio/about",
+        path: "/about",
         element: <About />,
       },
       {
-        path: "/ts-react-portfolio/projects",
+        path: "/projects",
         element: <Projects />,
       },
       {
-        path: "/ts-react-portfolio/skills",
+        path: "/skills",
         element: <Skills />,
       },
       {
-        path: "/ts-react-portfolio/contacts",
+        path: "/contacts",
         element: <Contacts />,
       },
     ],

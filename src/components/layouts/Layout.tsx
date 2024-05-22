@@ -21,11 +21,11 @@ import { Sun, Moon } from "lucide-react";
 const Layout: React.FC = () => {
   const { setTheme } = useTheme();
   return (
-    <div className="flex h-screen flex-col font-montserrat">
+    <div className="flex flex-col h-screen font-montserrat">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link to="/ts-react-portfolio" className="text-2xl font-bold">
+            <Link to="/" className="text-2xl font-bold">
               <h1>
                 &lt;Rai<span className="text-primary">.Dev</span>&gt;
               </h1>
@@ -34,7 +34,7 @@ const Layout: React.FC = () => {
 
           <NavigationMenuItem>
             <NavLink
-              to="/ts-react-portfolio"
+              to="/"
               className={({ isActive }) =>
                 isActive ? "font-bold text-primary" : ""
               }
@@ -45,7 +45,7 @@ const Layout: React.FC = () => {
             </NavLink>
 
             <NavLink
-              to="/ts-react-portfolio/about"
+              to="/about"
               className={({ isActive }) =>
                 isActive ? "font-bold  text-primary" : ""
               }
@@ -56,7 +56,7 @@ const Layout: React.FC = () => {
             </NavLink>
 
             <NavLink
-              to="/ts-react-portfolio/projects"
+              to="/projects"
               className={({ isActive }) =>
                 isActive ? "font-bold  text-primary" : ""
               }
@@ -67,7 +67,7 @@ const Layout: React.FC = () => {
             </NavLink>
 
             <NavLink
-              to="/ts-react-portfolio/skills"
+              to="/skills"
               className={({ isActive }) =>
                 isActive ? "font-bold  text-primary" : ""
               }
@@ -78,7 +78,7 @@ const Layout: React.FC = () => {
             </NavLink>
 
             <NavLink
-              to="/ts-react-portfolio/contacts"
+              to="/contacts"
               className={({ isActive }) =>
                 isActive ? "font-bold  text-primary" : ""
               }
