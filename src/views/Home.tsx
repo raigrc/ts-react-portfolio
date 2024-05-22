@@ -23,9 +23,9 @@ const Home: React.FC = () => {
   });
   return (
     <section className="h-full">
-      <div className="mx-auto flex h-full max-w-screen-xl py-3">
+      <div className="flex h-full max-w-screen-xl py-3 mx-auto">
         {/* left text */}
-        <div className="flex w-1/2 flex-col justify-center tracking-wider">
+        <div className="flex flex-col justify-center w-1/2 tracking-wider">
           <h3 className="text-sm md:text-base lg:text-lg">
             Hello, <span className="text-primary">I'm</span>
           </h3>
@@ -49,22 +49,22 @@ const Home: React.FC = () => {
 
           <div className="flex items-center gap-6">
             <Link to="https://www.linkedin.com/in/raigrc/" target="blank">
-              <FaLinkedin className="size-8 fill-primary transition duration-300 hover:fill-primary/70" />
+              <FaLinkedin className="transition duration-300 size-8 fill-primary hover:fill-primary/70" />
             </Link>
             <Link to="https://github.com/raigrc" target="blank">
-              <FaGithub className="size-8 fill-primary transition duration-300 hover:fill-primary/70" />
+              <FaGithub className="transition duration-300 size-8 fill-primary hover:fill-primary/70" />
             </Link>
             <Link to="https://www.facebook.com/xrai1210" target="blank">
-              <FaFacebook className="size-8 fill-primary transition duration-300 hover:fill-primary/70" />
+              <FaFacebook className="transition duration-300 size-8 fill-primary hover:fill-primary/70" />
             </Link>
             <Link to="https://www.instagram.com/rai.grc/" target="blank">
-              <FaInstagram className="size-8 fill-primary transition duration-300 hover:fill-primary/70" />
+              <FaInstagram className="transition duration-300 size-8 fill-primary hover:fill-primary/70" />
             </Link>
           </div>
         </div>
 
         {/* right img */}
-        <div className="flex w-1/2 flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center w-1/2">
           <img src={CodeReview} alt="" />
         </div>
       </div>
