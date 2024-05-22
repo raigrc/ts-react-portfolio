@@ -13,34 +13,94 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
+import { IoMdMail } from "react-icons/io";
+import { FaPhone } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Contacts: React.FC = () => {
   useDocumentTitle("Contacts");
   return (
     <section className="h-full">
-      <div className="mx-auto flex h-full max-w-screen-xl flex-row">
+      <div className="flex flex-row h-full max-w-screen-xl py-3 mx-auto">
         {/* left-contacts */}
-        <div className="h-full w-3/5 p-3">1</div>
+        <div className="flex flex-col justify-center w-3/5 h-full p-3">
+          <div className="">
+            <h1 className="text-6xl font-bold leading-relaxed tracking-widest uppercase ">
+              Contact
+            </h1>
+            <h2 className="text-3xl tracking-wider">Let's work together</h2>
+          </div>
+
+          <div className="py-6 space-y-3">
+            <div className="flex items-center tracking-wider">
+              <IoMdMail className="p-2 mr-3 rounded-full size-10 bg-accent fill-primary" />
+              <p>ravenjstn.grc@gmail.com</p>
+            </div>
+            <div className="flex items-center">
+              <FaPhone className="p-2 mr-3 rounded-full size-10 bg-accent fill-primary" />
+              <p>+63 961 1458 131</p>
+            </div>
+          </div>
+
+          {/* socials */}
+          <div className="py-6">
+            <h1 className="text-xl leading-loose tracking-wider">My Socials</h1>
+            <div className="flex items-center gap-6">
+              <Link to="https://www.linkedin.com/in/raigrc/" target="blank">
+                <FaLinkedin className="transition duration-300 size-8 fill-primary hover:fill-primary/70" />
+              </Link>
+              <Link to="https://github.com/raigrc" target="blank">
+                <FaGithub className="transition duration-300 size-8 fill-primary hover:fill-primary/70" />
+              </Link>
+              <Link to="https://www.facebook.com/xrai1210" target="blank">
+                <FaFacebook className="transition duration-300 size-8 fill-primary hover:fill-primary/70" />
+              </Link>
+              <Link to="https://www.instagram.com/rai.grc/" target="blank">
+                <FaInstagram className="transition duration-300 size-8 fill-primary hover:fill-primary/70" />
+              </Link>
+            </div>
+          </div>
+        </div>
 
         {/* right-form */}
-        <div className="w-2/5 grid place-items-center">
+        <div className="grid w-2/5 place-items-center">
           <Card className="bg-muted ring-2 ring-primary">
             <CardHeader className="border-b-2 border-gray-400">
-              <CardTitle className="tracking-wider uppercase">Got a question for me?</CardTitle>
-              <CardDescription>Fill up the form and I will get back to you <span className="text-primary font-semibold">ASAP!</span></CardDescription>
+              <CardTitle className="tracking-wider uppercase">
+                Got a question for me?
+              </CardTitle>
+              <CardDescription>
+                Fill up the form and I will get back to you{" "}
+                <span className="font-semibold text-primary">ASAP!</span>
+              </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-3 py-3">
+            <CardContent className="py-3 space-y-3">
               <div>
-                <Label htmlFor="fullname">Fullname <span className="text-red-400">*</span></Label>
-                <Input id="fullname" placeholder="Full name"/>
+                <Label htmlFor="fullname">
+                  Fullname <span className="text-red-400">*</span>
+                </Label>
+                <Input id="fullname" placeholder="Full name" />
               </div>
               <div>
-                <Label htmlFor="email">Email <span className="text-red-400">*</span></Label>
-                <Input id="email" placeholder="Email address"/>
+                <Label htmlFor="email">
+                  Email <span className="text-red-400">*</span>
+                </Label>
+                <Input id="email" placeholder="Email address" />
               </div>
               <div>
-                <Label htmlFor="message">Message <span className="text-red-400">*</span></Label>
-                <Textarea className="resize-none" rows={8} id="message" placeholder="Message..."/>
+                <Label htmlFor="message">
+                  Message <span className="text-red-400">*</span>
+                </Label>
+                <Textarea
+                  className="resize-none"
+                  rows={8}
+                  id="message"
+                  placeholder="Message..."
+                />
               </div>
             </CardContent>
             <CardFooter>
