@@ -25,7 +25,7 @@ const Layout: React.FC = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link to="/" className="text-2xl font-bold">
+            <Link to="/ts-react-portfolio" className="text-2xl font-bold">
               <h1>
                 &lt;Rai<span className="text-primary">.Dev</span>&gt;
               </h1>
@@ -34,7 +34,7 @@ const Layout: React.FC = () => {
 
           <NavigationMenuItem>
             <NavLink
-              to="/"
+              to="/ts-react-portfolio"
               className={({ isActive }) =>
                 isActive ? "font-bold text-primary" : ""
               }
@@ -45,7 +45,7 @@ const Layout: React.FC = () => {
             </NavLink>
 
             <NavLink
-              to="/about"
+              to="/ts-react-portfolio/about"
               className={({ isActive }) =>
                 isActive ? "font-bold  text-primary" : ""
               }
@@ -56,7 +56,7 @@ const Layout: React.FC = () => {
             </NavLink>
 
             <NavLink
-              to="/projects"
+              to="/ts-react-portfolio/projects"
               className={({ isActive }) =>
                 isActive ? "font-bold  text-primary" : ""
               }
@@ -67,7 +67,7 @@ const Layout: React.FC = () => {
             </NavLink>
 
             <NavLink
-              to="/skills"
+              to="/ts-react-portfolio/skills"
               className={({ isActive }) =>
                 isActive ? "font-bold  text-primary" : ""
               }
@@ -78,7 +78,7 @@ const Layout: React.FC = () => {
             </NavLink>
 
             <NavLink
-              to="/contacts"
+              to="/ts-react-portfolio/contacts"
               className={({ isActive }) =>
                 isActive ? "font-bold  text-primary" : ""
               }
