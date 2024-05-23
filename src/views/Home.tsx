@@ -23,9 +23,9 @@ const Home: React.FC = () => {
   });
   return (
     <section className="h-full">
-      <div className="flex h-full max-w-screen-xl py-3 mx-auto">
+      <div className="flex flex-col h-full max-w-screen-xl px-3 py-3 mx-auto lg:flex-row">
         {/* left text */}
-        <div className="flex flex-col justify-center w-1/2 tracking-wider">
+        <div className="z-50 flex flex-col items-center justify-center h-full tracking-wider lg:items-start lg:w-1/2">
           <h3 className="text-sm md:text-base lg:text-lg">
             Hello, <span className="text-primary">I'm</span>
           </h3>
@@ -64,8 +64,8 @@ const Home: React.FC = () => {
         </div>
 
         {/* right img */}
-        <div className="flex flex-col items-center justify-center w-1/2">
-          <img src={CodeReview} alt="" />
+        <div className="absolute flex flex-col items-center justify-center -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 opacity-20 lg:relative lg:left-0 lg:top-0 lg:w-1/2 lg:-translate-x-0 lg:-translate-y-0 lg:opacity-100">
+          <img src={CodeReview} alt="" className="" />
         </div>
       </div>
     </section>
