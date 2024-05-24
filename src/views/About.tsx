@@ -5,10 +5,10 @@ const About: React.FC = () => {
   useDocumentTitle("About Me");
   return (
     <section className="h-full">
-      <div className="mx-auto flex h-full max-w-screen-xl items-center space-x-3 py-3">
+      <div className="flex flex-col-reverse items-center justify-between h-full max-w-screen-xl py-3 mx-auto lg:space-x-3 lg:flex-row">
         {/* text-left */}
-        <div className="w-1/2 space-y-3 px-3">
-          <h1 className="bg-gradient-to-b from-primary from-50% to-background bg-clip-text text-6xl font-bold text-transparent">
+        <div className="px-3 space-y-3 lg:w-1/2 h-1/2 lg:h-auto">
+          <h1 className="bg-gradient-to-b from-primary from-50% to-background bg-clip-text text-center text-4xl md:text-5xl font-bold text-transparent lg:text-6xl">
             Get it done, then make it beautiful.
           </h1>
           <p className="text-justify text-muted-foreground">
@@ -20,8 +20,8 @@ const About: React.FC = () => {
         </div>
 
         {/* image-right */}
-        <div className="w-1/2 px-3 grid place-items-center">
-          <img className="size-64 rounded-full bg-purple-400" src="" alt="" />
+        <div className="grid px-3 place-items-center lg:w-1/2 h-1/2 lg:h-auto">
+          <img className="bg-purple-400 rounded-full size-64" src="" alt="" />
         </div>
       </div>
     </section>
