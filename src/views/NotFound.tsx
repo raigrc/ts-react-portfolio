@@ -9,7 +9,7 @@ const NotFound: React.FC = () => {
   return (
     <section className="h-screen">
       <div className="flex h-full max-w-screen-xl p-3 mx-auto lg:flex-row lg:justify-between">
-        <div className="flex flex-col items-center justify-center w-full space-y-3 lg:items-start lg:w-1/2">
+        <div className="z-50 flex flex-col items-center justify-center w-full space-y-3 lg:items-start lg:w-1/2">
           <h1 className="bg-gradient-to-b from-primary to-background bg-clip-text text-9xl md:text-[192px] lg:text-[240px]/tight font-black tracking-widest text-transparent">
             404
           </h1>
@@ -32,7 +32,7 @@ const NotFound: React.FC = () => {
           </div>
         </div>
 
-        <div className="absolute grid p-6 -translate-x-1/2 -translate-y-1/2 lg:opacity-100 lg:relative lg:-translate-x-0 lg:-translate-y-0 lg:left-0 lg:top-0 lg:w-1/2 place-items-center top-1/2 left-1/2 opacity-30">
+        <div className="absolute grid p-6 -translate-x-1/2 -translate-y-1/2 -z-10 lg:opacity-100 lg:relative lg:-translate-x-0 lg:-translate-y-0 lg:left-0 lg:top-0 lg:w-1/2 place-items-center top-1/2 left-1/2 opacity-30">
           <img className="size-full" src={NotFoundIllu} alt="" />
         </div>
       </div>
