@@ -25,14 +25,14 @@ const Contacts: React.FC = () => {
   useDocumentTitle("Contacts");
   return (
     <section className="h-full">
-      <div className="flex flex-row h-full max-w-screen-xl py-3 mx-auto">
+      <div className="flex flex-col h-full max-w-screen-xl p-3 mx-auto md:flex-row md:justify-between">
         {/* left-contacts */}
-        <div className="flex flex-col justify-center w-3/5 h-full p-3">
+        <div className="flex flex-col justify-center h-full p-3 lg:w-3/5">
           <div className="">
-            <h1 className="text-6xl font-bold leading-relaxed tracking-widest uppercase ">
+            <h1 className="text-4xl font-bold leading-relaxed tracking-widest uppercase md:text-5xl lg:text-6xl ">
               Contact
             </h1>
-            <h2 className="text-3xl tracking-wider">Let's work together</h2>
+            <h2 className="text-xl tracking-wider md:text-2xl lg:text-3xl">Let's work together</h2>
           </div>
 
           <div className="py-6 space-y-3">
@@ -67,7 +67,7 @@ const Contacts: React.FC = () => {
         </div>
 
         {/* right-form */}
-        <div className="grid w-2/5 place-items-center">
+        <div className="grid py-3 lg:w-2/5 place-items-center">
           <Card className="bg-muted ring-2 ring-primary">
             <CardHeader className="border-b-2 border-gray-400">
               <CardTitle className="tracking-wider uppercase">
