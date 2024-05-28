@@ -11,6 +11,8 @@ import TailwindLogo from "/skills/file-type-tailwind.svg";
 import SCSSLogo from "/skills/file-type-scss2.svg";
 import PHPLogo from "/skills/file-type-php.svg";
 import GitLogo from "/skills/file-type-git.svg";
+import MongoLogo from "/skills/file-type-mongo.svg";
+import ExpressLogo from "/skills/file-type-express.svg";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Skills: React.FC = () => {
@@ -61,11 +63,19 @@ const Skills: React.FC = () => {
       name: "Laravel",
       baseURL: BladeLogo,
     },
+    {
+      name: "Mongo DB",
+      baseURL: MongoLogo,
+    },
+    {
+      name: "Express JS",
+      baseURL: ExpressLogo,
+    },
   ];
   return (
     <section className="h-full">
-      <div className="mx-auto max-w-screen-xl py-3">
-        <div className="grid place-items-center py-6">
+      <div className="max-w-screen-xl py-3 mx-auto">
+        <div className="grid py-6 place-items-center">
           <h1 className="text-3xl font-medium text-primary">My Skills</h1>
         </div>
         <div className="grid grid-cols-2 gap-3 px-3 md:grid-cols-4 lg:grid-cols-6">
