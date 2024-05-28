@@ -111,12 +111,12 @@ const Projects: React.FC = () => {
         <div className="relative flex h-full gap-3 overflow-hidden">
           {allProjects.map((project, index) => (
             <Card
-              className={`group relative h-56 overflow-hidden px-0 duration-100 ${
+              className={`group relative h-56 overflow-hidden px-0 ${
                 index === 3 && hoveredIndex !== null && hoveredIndex !== 3
                   ? "absolute right-0 transform last:translate-x-full"
                   : index === 0 && hoveredIndex !== null && hoveredIndex === 3
-                    ? "absolute first:-translate-x-full "
-                    : "hover:grow"
+                    ? "absolute first:-translate-x-full transform"
+                    : "hover:flex-1"
               } `}
               key={index}
               onMouseEnter={() => {
