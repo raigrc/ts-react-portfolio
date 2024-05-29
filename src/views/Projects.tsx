@@ -17,6 +17,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 import ECommerce from "/projects/e-commerce.jpg";
 import ECommerce1 from "/projects/e-commerce1.jpg";
 import ECommerce2 from "/projects/e-commerce2.jpg";
@@ -48,10 +55,10 @@ const Projects: React.FC = () => {
       description:
         "This is my 3rd year college e-commerce website project! This platform is designed to deliver a smooth and enjoyable online shopping experience. Built with HTML, CSS, JavaScript, and native PHP, it caters to both shoppers and administrators, providing a secure and user-friendly environment.",
       techStack: {
-        html: HTMLLogo,
-        css: CSSLogo,
-        js: JSLogo,
-        php: PHPLogo,
+        HTML: HTMLLogo,
+        CSS: CSSLogo,
+        JavaScript: JSLogo,
+        PHP: PHPLogo,
       },
       coverPic: ECommerce,
       firstBg: ECommerce1,
@@ -63,11 +70,11 @@ const Projects: React.FC = () => {
       description:
         "The Online Resort Booking System is a web application project from my 3rd year college, also built using HTML, CSS, JavaScript, and Native PHP, providing users with a platform to discover, explore, and book resort accommodations online. The system offers a seamless booking experience, allowing users to search for available resorts, view details and amenities, select dates, make reservations, and manage bookings. ",
       techStack: {
-        html: HTMLLogo,
-        css: CSSLogo,
-        js: JSLogo,
-        scss: SCSSLogo,
-        php: PHPLogo,
+        HTML: HTMLLogo,
+        CSS: CSSLogo,
+        JavaScript: JSLogo,
+        SCSS: SCSSLogo,
+        PHP: PHPLogo,
       },
       coverPic: ECommerce,
       firstBg: OLBooking1,
@@ -79,10 +86,10 @@ const Projects: React.FC = () => {
       description:
         "Introducing our Workout Tracker – a simple web application designed to help fitness enthusiasts track their workouts, monitor progress, and achieve their fitness goals. Built with HTML, CSS, JavaScript, and native PHP, this platform offers a user-friendly interface and robust features to keep you motivated and on track.",
       techStack: {
-        mongo: MongoLogo,
-        express: ExpressLogo,
-        react: ReactLogo,
-        node: NodeLogo,
+        "Mongo DB": MongoLogo,
+        "Express JS": ExpressLogo,
+        "React JS": ReactLogo,
+        "Node JS": NodeLogo,
       },
       coverPic: ECommerce,
       firstBg: Workout1,
@@ -94,9 +101,9 @@ const Projects: React.FC = () => {
       description:
         "This project is a browser-based implementation of the popular 2048 puzzle game, created as part of an online workshop of Zuitt - Coding Bootcamp. Using HTML, CSS, and JavaScript, this game provides an engaging and interactive experience for players. The goal of the game is to combine tiles with the same numbers to reach the elusive 2048 tile.",
       techStack: {
-        html: HTMLLogo,
-        css: CSSLogo,
-        js: JSLogo,
+        HTML: HTMLLogo,
+        CSS: CSSLogo,
+        JavaScript: JSLogo,
       },
       coverPic: ECommerce,
       firstBg: JSFCB1,
@@ -142,12 +149,16 @@ const Projects: React.FC = () => {
               <CardContent className="relative z-10 duration-500 opacity-0 group-hover:opacity-100">
                 <div className="flex space-x-3">
                   {Object.entries(project.techStack).map(([tech, logo]) => (
-                    <div
-                      className="rounded-full size-10 bg-foreground/30 hover:bg-primary"
-                      key={tech}
-                    >
-                      <img className="p-2" src={logo} alt="" />
-                    </div>
+                    <TooltipProvider key={tech}>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <div className="rounded-full size-10 bg-foreground/30 hover:bg-primary">
+                            <img className="p-2" src={logo} alt="" />
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent>{tech}</TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   ))}
                 </div>
               </CardContent>
