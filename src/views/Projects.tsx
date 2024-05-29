@@ -108,14 +108,14 @@ const Projects: React.FC = () => {
   return (
     <section className="h-full px-3">
       <div className="max-w-screen-xl py-3 mx-auto">
-        <div className="relative flex flex-col flex-wrap h-full gap-3 overflow-hidden md:items-center md:justify-center md:flex-row lg:flex-nowrap">
+        <div className="relative flex flex-col flex-wrap h-full gap-3 overflow-hidden md:flex-row md:items-center md:justify-center lg:flex-nowrap lg:justify-normal">
           {allProjects.map((project, index) => (
             <Card
-              className={`group relative md:w-96 lg:w-auto lg:h-56 overflow-hidden px-0 ${
+              className={`group relative overflow-hidden px-0 md:w-96 lg:h-56 lg:w-auto ${
                 index === 3 && hoveredIndex !== null && hoveredIndex !== 3
-                  ? "lg:absolute lg:right-0 transform lg:last:translate-x-full"
+                  ? "transform lg:absolute lg:right-0 lg:translate-x-full"
                   : index === 0 && hoveredIndex !== null && hoveredIndex === 3
-                    ? "lg:absolute lg:left-0 transform lg:first:-translate-x-full"
+                    ? "transform lg:absolute lg:left-0 lg:-translate-x-full"
                     : "lg:hover:flex-1"
               } `}
               key={index}
