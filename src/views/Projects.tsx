@@ -16,7 +16,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-
 import {
   Tooltip,
   TooltipContent,
@@ -63,7 +62,8 @@ const Projects: React.FC = () => {
       coverPic: ECommerce,
       firstBg: ECommerce1,
       secondBg: ECommerce2,
-      dateCreated: "February 28, 2023",
+      month: "February 28",
+      year: 2023,
     },
     {
       name: "Online Booking Resort",
@@ -79,7 +79,8 @@ const Projects: React.FC = () => {
       coverPic: ECommerce,
       firstBg: OLBooking1,
       secondBg: OLBooking2,
-      dateCreated: "February 26, 2023",
+      month: "February 26",
+      year: 2023,
     },
     {
       name: "Workout Tracker",
@@ -94,7 +95,8 @@ const Projects: React.FC = () => {
       coverPic: ECommerce,
       firstBg: Workout1,
       secondBg: Workout2,
-      dateCreated: "March 04, 2024",
+      month: "March 04",
+      year: 2024,
     },
     {
       name: "2048",
@@ -108,27 +110,27 @@ const Projects: React.FC = () => {
       coverPic: ECommerce,
       firstBg: JSFCB1,
       secondBg: JSFCB2,
-      dateCreated: "March 17, 2024",
+      month: "March 17",
+      year: 2024,
     },
   ];
+  allProjects.sort((a, b) => b.year - a.year);
 
   return (
     <section className="h-full px-3">
       <div className="max-w-screen-xl py-3 mx-auto">
-        <div className="relative flex flex-col flex-wrap h-full gap-3 overflow-hidden md:flex-row md:items-center md:justify-center lg:flex-nowrap lg:justify-normal">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {allProjects.map((project, index) => (
             <Card
-              className={`group relative overflow-hidden px-0 md:w-96 lg:h-56 lg:w-auto ${
-                index === 3 && hoveredIndex !== null && hoveredIndex !== 3
-                  ? "transform lg:absolute lg:right-0 lg:translate-x-full"
-                  : index === 0 && hoveredIndex !== null && hoveredIndex === 3
-                    ? "transform lg:absolute lg:left-0 lg:-translate-x-full"
-                    : "lg:hover:flex-1"
-              } `}
+              className={`group relative overflow-hidden px-0 lg:hover:col-span-2 md:w-96 lg:h-56 lg:w-auto ${
+                hoveredIndex !== null &&
+                ((hoveredIndex === 3 && index === 0) ||
+                  (hoveredIndex < 3 && index === 3))
+                  ? "lg:hidden"
+                  : ""
+              }`}
               key={index}
-              onMouseEnter={() => {
-                setHoveredIndex(index), console.log(index);
-              }}
+              onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <img
@@ -164,7 +166,9 @@ const Projects: React.FC = () => {
               </CardContent>
               <CardFooter className="relative z-10 flex items-center justify-between duration-500 opacity-0 group-hover:opacity-100">
                 <div className="text-muted-foreground">
-                  <p>{project.dateCreated}</p>
+                  <p>
+                    {project.month}, {project.year}
+                  </p>
                 </div>
                 <Dialog>
                   <DialogTrigger>
