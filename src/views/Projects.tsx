@@ -26,12 +26,17 @@ import {
 import ECommerce from "/projects/e-commerce.jpg";
 import ECommerce1 from "/projects/e-commerce1.jpg";
 import ECommerce2 from "/projects/e-commerce2.jpg";
+import OLBooking from "/projects/online-booking.jpg";
 import OLBooking1 from "/projects/online-booking1.jpg";
 import OLBooking2 from "/projects/online-booking2.jpg";
+import Workout from "/projects/workout-tracker.jpg";
 import Workout1 from "/projects/workout-tracker1.jpg";
 import Workout2 from "/projects/workout-tracker2.jpg";
+import JSFCB from "/projects/2048-game.jpg";
 import JSFCB1 from "/projects/2048-game1.jpg";
 import JSFCB2 from "/projects/2048-game2.jpg";
+import E4EJ from "/projects/e4ej.jpg";
+import E4EJ1 from "/projects/e4ej1.png";
 
 import HTMLLogo from "/skills/file-type-html.svg";
 import CSSLogo from "/skills/file-type-css.svg";
@@ -42,6 +47,8 @@ import MongoLogo from "/skills/file-type-mongo.svg";
 import ExpressLogo from "/skills/file-type-express.svg";
 import ReactLogo from "/skills/file-type-reactjs.svg";
 import NodeLogo from "/skills/file-type-node.svg";
+import BladeLogo from "/skills/file-type-blade.svg";
+import TailwindLogo from "/skills/file-type-tailwind.svg";
 
 const Projects: React.FC = () => {
   useDocumentTitle("Projects");
@@ -62,8 +69,7 @@ const Projects: React.FC = () => {
       coverPic: ECommerce,
       firstBg: ECommerce1,
       secondBg: ECommerce2,
-      month: "February 28",
-      year: 2023,
+      date: new Date("2023-02"),
     },
     {
       name: "Online Booking Resort",
@@ -76,11 +82,10 @@ const Projects: React.FC = () => {
         SCSS: SCSSLogo,
         PHP: PHPLogo,
       },
-      coverPic: ECommerce,
+      coverPic: OLBooking,
       firstBg: OLBooking1,
       secondBg: OLBooking2,
-      month: "February 26",
-      year: 2023,
+      date: new Date("2023-02"),
     },
     {
       name: "Workout Tracker",
@@ -92,11 +97,10 @@ const Projects: React.FC = () => {
         "React JS": ReactLogo,
         "Node JS": NodeLogo,
       },
-      coverPic: ECommerce,
+      coverPic: Workout,
       firstBg: Workout1,
       secondBg: Workout2,
-      month: "March 04",
-      year: 2024,
+      date: new Date("2024-03"),
     },
     {
       name: "2048",
@@ -107,14 +111,37 @@ const Projects: React.FC = () => {
         CSS: CSSLogo,
         JavaScript: JSLogo,
       },
-      coverPic: ECommerce,
+      coverPic: JSFCB,
       firstBg: JSFCB1,
       secondBg: JSFCB2,
-      month: "March 17",
-      year: 2024,
+      date: new Date("2024-03"),
+    },
+    {
+      name: "Eskwela4EveryJuan",
+      description:
+        "Eskwela4EveryJuan is a Learning Management System (LMS) with integration of AI (GPT-3.5) developed using the Laravel framework. This capstone project is designed specifically for Micro, Small, and Medium Enterprises (MSMEs) to facilitate an inclusive and efficient online learning environment. The primary aim of this project is to equip MSMEs with the knowledge and skills they need to become successful entrepreneurs.",
+      techStack: {
+        HTML: HTMLLogo,
+        CSS: CSSLogo,
+        JavaScript: JSLogo,
+        Laravel: BladeLogo,
+        "Tailwind CSS": TailwindLogo,
+      },
+      coverPic: E4EJ,
+      firstBg: E4EJ1,
+      secondBg: E4EJ,
+      date: new Date("2024-04"),
     },
   ];
-  allProjects.sort((a, b) => b.year - a.year);
+
+  const formatDate = (date: Date): string => {
+    return new Date(date).toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "long",
+    });
+  };
+
+  allProjects.sort((a: any, b: any) => b.date - a.date);
 
   return (
     <section className="h-full px-3">
@@ -122,7 +149,7 @@ const Projects: React.FC = () => {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {allProjects.map((project, index) => (
             <Card
-              className={`group relative overflow-hidden px-0 lg:hover:col-span-2 md:w-96 lg:h-56 lg:w-auto ${
+              className={`group relative overflow-hidden px-0 md:w-96 lg:h-56 lg:w-auto lg:hover:col-span-2 ${
                 hoveredIndex !== null &&
                 ((hoveredIndex === 3 && index === 0) ||
                   (hoveredIndex < 3 && index === 3))
@@ -134,13 +161,13 @@ const Projects: React.FC = () => {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <img
-                className="absolute z-0 object-cover w-full h-full transition-all duration-500 delay-100 group-hover:opacity-0"
+                className="absolute z-0 object-cover w-full h-full transition-all duration-500 delay-100 bg-background group-hover:opacity-0"
                 src={project.firstBg}
                 alt=""
                 id="bg"
               />
               <img
-                className="absolute object-cover w-full h-full transition-all duration-500 delay-100 bg-red-500 opacity-0 group-hover:opacity-20"
+                className="absolute object-cover w-full h-full transition-all duration-500 delay-100 bg-red-500 opacity-0 bg-background group-hover:opacity-20"
                 src={project.secondBg}
                 alt=""
                 id="bg-hover"
@@ -166,9 +193,7 @@ const Projects: React.FC = () => {
               </CardContent>
               <CardFooter className="relative z-10 flex items-center justify-between duration-500 opacity-0 group-hover:opacity-100">
                 <div className="text-muted-foreground">
-                  <p>
-                    {project.month}, {project.year}
-                  </p>
+                  <p>{formatDate(project.date)}</p>
                 </div>
                 <Dialog>
                   <DialogTrigger>
