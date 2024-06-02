@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import React from "react";
 import { IconContext } from "react-icons";
 import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa6";
