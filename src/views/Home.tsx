@@ -31,19 +31,19 @@ const HomeInformation: React.FC = () => {
     delaySpeed: 1500,
   });
   return (
-    <div className="z-50 flex flex-col items-center justify-center h-full tracking-wider animate-fade-down animate-once animate-duration-1000 animate-ease-in-out lg:w-1/2 lg:items-start">
-      <h3 className="text-sm md:text-base lg:text-lg ">
+    <div className="z-50 flex flex-col items-center justify-center h-full tracking-wider lg:w-1/2 lg:items-start">
+      <h3 className="text-sm animate-fade-down animate-once animate-duration-700 animate-ease-in-out md:text-base lg:text-lg">
         Hello, <span className="text-primary">I'm</span>
       </h3>
-      <h1 className="text-2xl font-semibold md:text-3xl lg:text-5xl">
+      <h1 className="text-2xl font-semibold animate-fade-down animate-once animate-duration-700 animate-ease-in-out animate-delay-300 md:text-3xl lg:text-5xl">
         Raven Justin P. Garcia
       </h1>
-      <h2 className="text-lg font-bold text-primary md:text-xl lg:text-4xl">
+      <h2 className="text-lg font-bold animate-fade-down animate-once animate-duration-700 animate-ease-in-out animate-delay-500 text-primary md:text-xl lg:text-4xl">
         {Typewriter}
         <Cursor />
       </h2>
 
-      <div className="flex items-center justify-center gap-3 py-10 lg:justify-normal">
+      <div className="flex items-center justify-center gap-3 py-10 animate-fade-right animate-once animate-duration-700 animate-ease-in-out animate-delay-700 lg:justify-normal">
         <a href={Resume} download target="_blank" rel="noopener noreferrer">
           <Button variant="outline">Download CV</Button>
         </a>
@@ -53,7 +53,7 @@ const HomeInformation: React.FC = () => {
         </Link>
       </div>
 
-      <SocialIcons />
+      <SocialIcons className="animate-fade-right animate-once animate-duration-700 animate-ease-in-out animate-delay-1000" />
     </div>
   );
 };

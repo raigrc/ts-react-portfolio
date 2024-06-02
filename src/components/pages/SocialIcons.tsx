@@ -1,11 +1,16 @@
-import React from 'react'
-import { IconContext } from 'react-icons';
-import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from 'react-icons/fa6';
-import { Link } from 'react-router-dom';
+import { cn } from "@/lib/utils";
+import React from "react";
+import { IconContext } from "react-icons";
+import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
-const SocialIcons: React.FC = () => {
+type AdditionalClass = {
+  className?: string;
+};
+
+const SocialIcons: React.FC<AdditionalClass> = ({ className }) => {
   return (
-    <div className="flex items-center gap-6">
+    <div className={`flex items-center gap-6 ${className}`}>
       <IconContext.Provider
         value={{
           color: "primary",
@@ -29,6 +34,6 @@ const SocialIcons: React.FC = () => {
       </IconContext.Provider>
     </div>
   );
-}
+};
 
-export default SocialIcons
+export default SocialIcons;
