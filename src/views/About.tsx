@@ -18,10 +18,10 @@ const About: React.FC = () => {
 const AboutInfo: React.FC = () => {
   return (
     <div className="h-1/2 space-y-3 px-3 lg:h-auto lg:w-1/2">
-      <h1 className="bg-gradient-to-b from-primary from-50% to-background bg-clip-text text-center text-4xl font-bold text-transparent md:text-5xl lg:text-left lg:text-6xl">
+      <h1 className="animate-fade-down animate-once animate-duration-1000 animate-ease-in-out bg-gradient-to-b from-primary from-50% to-background bg-clip-text text-center text-4xl font-bold text-transparent md:text-5xl lg:text-left lg:text-6xl">
         Get it done, then make it beautiful.
       </h1>
-      <p className="py-6 text-justify text-muted-foreground">
+      <p className="animate-fade animate-delay-500 animate-once animate-duration-1000 animate-ease-in-out py-6 text-justify text-muted-foreground">
         I focus on functionality—ensuring the project works as intended. Once
         the core features are in place and the application is stable, I then
         shift my attention to refining the design and enhancing the user
@@ -36,7 +36,7 @@ const AboutInfo: React.FC = () => {
 
 const Avatar: React.FC = () => {
   return (
-    <div className="grid h-1/2 place-items-center px-3 lg:h-auto lg:w-1/2">
+    <div className="animate-jump-in animate-once animate-duration-700 animate-delay-500 animate-ease-in-out grid h-1/2 place-items-center px-3 lg:h-auto lg:w-1/2">
       <img className="size-64 rounded-full bg-purple-400" src="" alt="" />
     </div>
   );

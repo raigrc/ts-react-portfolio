@@ -34,7 +34,7 @@ const Contacts: React.FC = () => {
 
 const ContactInfo: React.FC = () => {
   return (
-    <div className="flex flex-col justify-center h-full p-3 lg:w-3/5">
+    <div className="flex flex-col justify-center h-full p-3 animate-fade-right animate-once animate-duration-700 animate-ease-in-out lg:w-3/5">
       <div className="">
         <h1 className="text-4xl font-bold leading-relaxed tracking-widest uppercase md:text-5xl lg:text-6xl ">
           Contact
@@ -66,7 +66,7 @@ const ContactInfo: React.FC = () => {
 
 const ContactForm: React.FC = () => {
   return (
-    <div className="grid py-3 place-items-center lg:w-2/5">
+    <div className="grid py-3 animate-fade-left animate-once animate-duration-700 animate-ease-in-out place-items-center lg:w-2/5">
       <Card className="bg-muted ring-2 ring-primary">
         <CardHeader className="border-b-2 border-gray-400">
           <CardTitle className="tracking-wider uppercase">

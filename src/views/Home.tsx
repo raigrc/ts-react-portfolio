@@ -14,7 +14,7 @@ const Home: React.FC = () => {
 
   return (
     <section className="h-full">
-      <div className="mx-auto flex h-full max-w-screen-xl flex-col px-3 py-3 lg:flex-row">
+      <div className="flex flex-col h-full max-w-screen-xl px-3 py-3 mx-auto lg:flex-row">
         <HomeInformation />
         <SVGImage img={CodeReview} />
       </div>
@@ -31,8 +31,8 @@ const HomeInformation: React.FC = () => {
     delaySpeed: 1500,
   });
   return (
-    <div className="z-50 flex h-full flex-col items-center justify-center tracking-wider lg:w-1/2 lg:items-start">
-      <h3 className="text-sm md:text-base lg:text-lg">
+    <div className="z-50 flex flex-col items-center justify-center h-full tracking-wider animate-fade-down animate-once animate-duration-1000 animate-ease-in-out lg:w-1/2 lg:items-start">
+      <h3 className="text-sm md:text-base lg:text-lg ">
         Hello, <span className="text-primary">I'm</span>
       </h3>
       <h1 className="text-2xl font-semibold md:text-3xl lg:text-5xl">

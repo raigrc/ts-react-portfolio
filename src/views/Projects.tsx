@@ -23,6 +23,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
+import { formatDate } from "@/utils/DateFormat";
+
 import ECommerce from "/projects/e-commerce.jpg";
 import ECommerce1 from "/projects/e-commerce1.jpg";
 import ECommerce2 from "/projects/e-commerce2.jpg";
@@ -134,13 +136,6 @@ const Projects: React.FC = () => {
     },
   ];
 
-  const formatDate = (date: Date): string => {
-    return new Date(date).toLocaleDateString(undefined, {
-      year: "numeric",
-      month: "long",
-    });
-  };
-
   allProjects.sort((a: any, b: any) => b.date - a.date);
 
   return (
@@ -149,7 +144,7 @@ const Projects: React.FC = () => {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {allProjects.map((project, index) => (
             <Card
-              className={`group relative overflow-hidden px-0 md:w-96 lg:h-56 lg:w-auto lg:hover:col-span-2 ${
+              className={`animate-fade animate-once animate-duration-700 animate-ease-in-out group relative overflow-hidden px-0 md:w-96 lg:h-56 lg:w-auto lg:hover:col-span-2 ${
                 hoveredIndex !== null &&
                 ((hoveredIndex === 3 && index === 0) ||
                   (hoveredIndex < 3 && index === 3))
