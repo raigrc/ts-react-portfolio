@@ -1,29 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import useDocumentTitle from "@/hooks/useDocumentTitle";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
-import { formatDate } from "@/utils/DateFormat";
 
 import ECommerce from "/projects/e-commerce.jpg";
 import ECommerce1 from "/projects/e-commerce1.jpg";
@@ -51,13 +27,14 @@ import ReactLogo from "/skills/file-type-reactjs.svg";
 import NodeLogo from "/skills/file-type-node.svg";
 import BladeLogo from "/skills/file-type-blade.svg";
 import TailwindLogo from "/skills/file-type-tailwind.svg";
+import ProjectCard, { MyProjects } from "@/components/Projects/ProjectCard";
 
-const Projects: React.FC = () => {
+const Projects = () => {
   useDocumentTitle("Projects");
 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  const allProjects = [
+  const allProjects: MyProjects[] = [
     {
       name: "E-Commerce Website",
       description:
@@ -140,72 +117,16 @@ const Projects: React.FC = () => {
 
   return (
     <section className="h-full px-3">
-      <div className="max-w-screen-xl py-3 mx-auto">
+      <div className="mx-auto max-w-screen-xl py-3">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {allProjects.map((project, index) => (
-            <Card
-              className={`animate-fade animate-once animate-duration-700 animate-ease-in-out group relative overflow-hidden px-0 md:w-96 lg:h-56 lg:w-auto lg:hover:col-span-2 ${
-                hoveredIndex !== null &&
-                ((hoveredIndex === 3 && index === 0) ||
-                  (hoveredIndex < 3 && index === 3))
-                  ? "lg:hidden"
-                  : ""
-              }`}
+            <ProjectCard
+              project={project}
               key={index}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <img
-                className="absolute z-0 object-cover w-full h-full transition-all duration-500 delay-100 bg-background group-hover:opacity-0"
-                src={project.firstBg}
-                alt=""
-                id="bg"
-              />
-              <img
-                className="absolute object-cover w-full h-full transition-all duration-500 delay-100 bg-red-500 opacity-0 bg-background group-hover:opacity-20"
-                src={project.secondBg}
-                alt=""
-                id="bg-hover"
-              />
-              <CardHeader className="relative z-10 text-center duration-500 opacity-0 group-hover:opacity-100">
-                <CardTitle>{project.name}</CardTitle>
-              </CardHeader>
-              <CardContent className="relative z-10 duration-500 opacity-0 group-hover:opacity-100">
-                <div className="flex space-x-3">
-                  {Object.entries(project.techStack).map(([tech, logo]) => (
-                    <TooltipProvider key={tech}>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <div className="rounded-full size-10 bg-foreground/30 hover:bg-primary">
-                            <img className="p-2" src={logo} alt="" />
-                          </div>
-                        </TooltipTrigger>
-                        <TooltipContent>{tech}</TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  ))}
-                </div>
-              </CardContent>
-              <CardFooter className="relative z-10 flex items-center justify-between duration-500 opacity-0 group-hover:opacity-100">
-                <div className="text-muted-foreground">
-                  <p>{formatDate(project.date)}</p>
-                </div>
-                <Dialog>
-                  <DialogTrigger>
-                    <Button>Read more</Button>
-                  </DialogTrigger>
-                  <DialogContent>
-                    <DialogHeader>
-                      <div className="my-6">
-                        <img src={project.coverPic} alt="" />
-                      </div>
-                      <DialogTitle>{project.name}</DialogTitle>
-                    </DialogHeader>
-                    <DialogDescription>{project.description}</DialogDescription>
-                  </DialogContent>
-                </Dialog>
-              </CardFooter>
-            </Card>
+              index={index}
+              hoveredIndex={hoveredIndex}
+              setHoveredIndex={setHoveredIndex}
+            />
           ))}
         </div>
       </div>

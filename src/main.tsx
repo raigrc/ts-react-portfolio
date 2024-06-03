@@ -3,13 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { ThemeProvider } from "./components/theme-provider";
 import { RouterProvider, createHashRouter } from "react-router-dom";
-import Layout from "./components/layouts/Layout";
-import Home from "./views/Home";
-import About from "./views/About";
-import Contacts from "./views/Contacts";
-import Projects from "./views/Projects";
-import Skills from "./views/Skills";
-import NotFound from "./views/NotFound";
+import Layout from "./shared/layouts/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contacts from "./pages/Contacts";
+import Projects from "./pages/Projects";
+import Skills from "./pages/Skills";
+import NotFound from "./pages/NotFound";
 
 const router = createHashRouter([
   {

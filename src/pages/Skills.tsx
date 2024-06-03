@@ -1,4 +1,3 @@
-import React from "react";
 import useDocumentTitle from "@/hooks/useDocumentTitle";
 import HTMLLogo from "/skills/file-type-html.svg";
 import CSSLogo from "/skills/file-type-css.svg";
@@ -13,75 +12,75 @@ import PHPLogo from "/skills/file-type-php.svg";
 import GitLogo from "/skills/file-type-git.svg";
 import MongoLogo from "/skills/file-type-mongo.svg";
 import ExpressLogo from "/skills/file-type-express.svg";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import SkillCard, { SkillLogos } from "@/components/Skills/SkillCard";
 
-const Skills: React.FC = () => {
+const Skills = () => {
   useDocumentTitle("Skills");
 
-  const logos = [
+  const logos: SkillLogos[] = [
     {
       name: "HTML",
-      baseURL: HTMLLogo,
+      URL: HTMLLogo,
       type: "frontend",
     },
     {
       name: "CSS",
-      baseURL: CSSLogo,
+      URL: CSSLogo,
       type: "frontend",
     },
     {
       name: "Javascript",
-      baseURL: JSLogo,
+      URL: JSLogo,
       type: "frontend",
     },
     {
       name: "React",
-      baseURL: ReactLogo,
+      URL: ReactLogo,
       type: "frontend",
     },
     {
       name: "Typescript",
-      baseURL: TSLogo,
+      URL: TSLogo,
       type: "frontend",
     },
     {
       name: "Git",
-      baseURL: GitLogo,
+      URL: GitLogo,
       type: "version-control",
     },
     {
       name: "Tailwind",
-      baseURL: TailwindLogo,
+      URL: TailwindLogo,
       type: "frontend",
     },
     {
       name: "SCSS",
-      baseURL: SCSSLogo,
+      URL: SCSSLogo,
       type: "frontend",
     },
     {
       name: "Node JS",
-      baseURL: NodeLogo,
+      URL: NodeLogo,
       type: "backend",
     },
     {
       name: "PHP",
-      baseURL: PHPLogo,
+      URL: PHPLogo,
       type: "backend",
     },
     {
       name: "Laravel",
-      baseURL: BladeLogo,
+      URL: BladeLogo,
       type: "backend",
     },
     {
       name: "Mongo DB",
-      baseURL: MongoLogo,
+      URL: MongoLogo,
       type: "database",
     },
     {
       name: "Express JS",
-      baseURL: ExpressLogo,
+      URL: ExpressLogo,
       type: "backend",
     },
   ];
@@ -94,21 +93,7 @@ const Skills: React.FC = () => {
         </div>
         <div className="grid grid-cols-2 gap-3 px-3 md:grid-cols-4 lg:grid-cols-6">
           {logos.map((logo, index) => (
-            <Card
-              className="animate-jump-in animate-once animate-duration-500 animate-ease-in-out group bg-muted hover:bg-muted-foreground/40"
-              key={index}
-            >
-              <CardHeader>
-                <CardTitle className="text-center">{logo.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <img
-                  className="mx-auto size-16 transition-all duration-500 group-hover:scale-125"
-                  src={logo.baseURL}
-                  alt={logo.name}
-                />
-              </CardContent>
-            </Card>
+            <SkillCard skillLogo={logo} key={index} />
           ))}
         </div>
       </div>
