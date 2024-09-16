@@ -1,6 +1,6 @@
 import useDocumentTitle from "@/hooks/useDocumentTitle";
 import ContactInformation from "@/components/Contacts/ContactInformation";
-import ContactForm from "@/components/Contacts/ContactForm";
+// import ContactForm from "@/components/Contacts/ContactForm";
 
 const Contacts = () => {
   useDocumentTitle("Contacts");
