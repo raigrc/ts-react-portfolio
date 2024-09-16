@@ -1,0 +1,11 @@
+{
+  "canisters": {
+    "ts-react-portfolio": {
+      "type": "assets",
+      "source": ["dist"],
+      "frontend": {
+        "entrypoint": "index.html"
+      }
+    }
+  }
+}
