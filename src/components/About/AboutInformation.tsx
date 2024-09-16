@@ -11,7 +11,8 @@ const AboutInformation = () => {
         experience. <br /> <br /> I am a 4th-year student at Polytechnic
         University of the Philippines San Pedro Campus, passionate about web
         development. Your just so average programmer, I love and practice the
-        MERN stack, with a strong focus on front-end development.
+        MERN stack and Next JS Framework, with a strong focus on front-end
+        development.
       </p>
     </div>
   );
