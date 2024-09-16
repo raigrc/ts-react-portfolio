@@ -9,7 +9,7 @@ const Contacts = () => {
       <div className="flex flex-col h-full max-w-screen-xl p-3 mx-auto md:flex-row md:justify-between">
         <ContactInformation />
 
-        <ContactForm />
+        {/* <ContactForm /> */}
       </div>
     </section>
   );
