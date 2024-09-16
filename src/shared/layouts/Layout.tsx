@@ -22,7 +22,7 @@ import { FaBars } from "react-icons/fa6";
 const Layout: React.FC = () => {
   const { setTheme } = useTheme();
   return (
-    <div className="flex h-screen flex-col font-montserrat">
+    <div className="flex flex-col h-screen font-montserrat">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -140,7 +140,7 @@ const Layout: React.FC = () => {
                   variant="outline"
                   className="transition-all duration-200"
                 >
-                  <FaBars className="size-5 duration-200 hover:fill-primary" />
+                  <FaBars className="duration-200 size-5 hover:fill-primary" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
