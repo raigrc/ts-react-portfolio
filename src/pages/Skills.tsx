@@ -12,6 +12,8 @@ import PHPLogo from "/skills/file-type-php.svg";
 import GitLogo from "/skills/file-type-git.svg";
 import MongoLogo from "/skills/file-type-mongo.svg";
 import ExpressLogo from "/skills/file-type-express.svg";
+import NextJSLogo from "/skills/file-type-nextjs.svg";
+import PrismaLogo from "/skills/file-type-light-prisma.svg";
 import SkillCard, { SkillLogos } from "@/components/Skills/SkillCard";
 
 const Skills = () => {
@@ -32,6 +34,11 @@ const Skills = () => {
       name: "Javascript",
       URL: JSLogo,
       type: "frontend",
+    },
+    {
+      name: "Next JS",
+      URL: NextJSLogo,
+      type: "backend",
     },
     {
       name: "React",
@@ -79,6 +86,11 @@ const Skills = () => {
       type: "database",
     },
     {
+      name: "Prisma",
+      URL: PrismaLogo,
+      type: "database",
+    },
+    {
       name: "Express JS",
       URL: ExpressLogo,
       type: "backend",
@@ -87,8 +99,8 @@ const Skills = () => {
 
   return (
     <section className="h-full">
-      <div className="mx-auto max-w-screen-xl py-3">
-        <div className="grid place-items-center py-6">
+      <div className="max-w-screen-xl py-3 mx-auto">
+        <div className="grid py-6 place-items-center">
           <h1 className="text-3xl font-medium text-primary">My Skills</h1>
         </div>
         <div className="grid grid-cols-2 gap-3 px-3 md:grid-cols-4 lg:grid-cols-6">
